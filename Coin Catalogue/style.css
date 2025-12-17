@@ -1,0 +1,44 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.fixed{
+    position:fixed;
+    bottom: 0px;
+    width:100vw;
+    height:10vh;
+    background-color: white;
+    border:inset 1px;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.absolute{
+    position:absolute;
+    top:20px;
+    left:50px;
+}
+
+.hometext , .scantext , .statstext , .collectiontext{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:2px;
+}
+
+a{
+    text-decoration: none;
+    color:blue;
+}
+a:active{
+    color:aqua;
+}

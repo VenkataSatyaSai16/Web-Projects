@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Catalogue</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f8f8f8;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .right-corner button {
+            background: none;
+            border: none;
+            font-size: 18px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .overview {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 10px;
+            margin: 20px;
+            border: 3px solid rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .data {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .overview-left,
+        .overview-right {
+            display: flex;
+            flex-direction: column;
+            font-size: x-large;
+        }
+
+        .addition-data {
+            margin: 20px;
+        }
+        .search-btn .vertical-btn{
+            padding:0px;
+        }
+        .search-btn:active{
+            scale:1.1;
+            transition: 0.2s;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="fixed">
+            <div class="home">
+                <a href="index.html">
+                    <div class="hometext">
+                        <p>Home</p><small>HOME</small>
+                    </div>
+                </a>
+            </div>
+            <div class="scan">
+                <a href="./scan.html">
+                    <div class="scantext">
+                        <p>photo_camera</p><small>SCAN</small>
+                    </div>
+
+                </a>
+            </div>
+            <div class="collection">
+                <a href="collection.html">
+                    <p>grid_view</p><small>Collection</small>
+                </a>
+            </div>
+            <div class="stats">
+                <a href="stats.html">
+                    <p>insert_chart</p><small>Stats</small>
+                </a>
+            </div>
+        </div>
+
+        <div class="top">
+            <div class="title">
+                <h2>Coin Catalogue</h2>
+            </div>
+            <div class="right-corner">
+                <button id="search-btn">
+                    <svg fill="#000000" width="2vw" height="7vh" viewBox="0 -0.24 28.423 28.423"
+                        id="_02_-_Search_Button" data-name="02 - Search Button" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path id="Path_215" data-name="Path 215"
+                                d="M14.953,2.547A12.643,12.643,0,1,0,27.6,15.19,12.649,12.649,0,0,0,14.953,2.547Zm0,2A10.643,10.643,0,1,1,4.31,15.19,10.648,10.648,0,0,1,14.953,4.547Z"
+                                transform="translate(-2.31 -2.547)" fill-rule="evenodd"></path>
+                            <path id="Path_216" data-name="Path 216"
+                                d="M30.441,28.789l-6.276-6.276a1,1,0,1,0-1.414,1.414L29.027,30.2a1,1,0,1,0,1.414-1.414Z"
+                                transform="translate(-2.31 -2.547)" fill-rule="evenodd"></path>
+                        </g>
+                    </svg>
+                </button>
+                <button id="Vertical-btn">
+                    <svg fill="#000000" width="2vw" height="7vh" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path
+                                d="M 6.0626 19.5390 L 49.9144 19.5390 C 50.8984 19.5390 51.7187 18.7656 51.7187 17.7812 C 51.7187 16.7968 50.8984 16 49.9144 16 L 6.0626 16 C 5.0782 16 4.2813 16.7968 4.2813 17.7812 C 4.2813 18.7656 5.0782 19.5390 6.0626 19.5390 Z M 6.0626 29.7578 L 49.9144 29.7578 C 50.8984 29.7578 51.7187 28.9843 51.7187 28 C 51.7187 26.9921 50.8984 26.1953 49.9144 26.1953 L 6.0626 26.1953 C 5.0782 26.1953 4.2813 26.9921 4.2813 28 C 4.2813 28.9843 5.0782 29.7578 6.0626 29.7578 Z M 6.0626 40 L 49.9144 40 C 50.8984 40 51.7187 39.2031 51.7187 38.1953 C 51.7187 37.2109 50.8984 36.4375 49.9144 36.4375 L 6.0626 36.4375 C 5.0782 36.4375 4.2813 37.2109 4.2813 38.1953 C 4.2813 39.2031 5.0782 40 6.0626 40 Z">
+                            </path>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+
+        <div class="overview">
+
+            <big>Collection Overview</big>
+
+            <div class="data">
+                <div class="overview-left">
+                    <div id="total-coins">
+                        <small>Total Coins:</small>
+                    </div>
+                    <div id="oldest-coins">
+                        <small>Oldest coin:</small>
+                    </div>
+
+                </div>
+
+                <div class="overview-right">
+                    <div id="countries">
+                        <small>Countries:</small>
+                    </div>
+                    <div id="estd-value">
+                        <small>Estd. Value:</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="addition-data">
+            <h2>Recent Additions</h2>
+        </div>
+        <br><br>
+    </div>
+</body>
+
+</html>
